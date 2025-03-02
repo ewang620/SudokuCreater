@@ -8,6 +8,7 @@ class SudokuBoard {
 public:
     SudokuBoard();      
     void print() const;   
+    bool isValid(int row, int col, int num) const;
     //should add checker, solver, generator, etc later on.
 
 private:
