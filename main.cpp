@@ -3,7 +3,7 @@
 
 int main() {
     SudokuBoard board;
-    board.generate(); //complete board
+    board.generate(); //create complete board
     
     int clues = 10;
     board.makePuzzle(clues);
