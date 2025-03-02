@@ -1,4 +1,5 @@
 #include "/workspaces/SudokuCreater/include/sudoku.h"
+#include <algorithm>
 
 //9x9 board with 0s as blanks. initialized. 
 SudokuBoard::SudokuBoard() : board(9, std::vector<int>(9, 0)) {}
@@ -52,3 +53,6 @@ bool SudokuBoard::solve() {
     }
     return true;
 }
+
+//generator
+void SudokuBoard::generate() {}
