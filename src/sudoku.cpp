@@ -1,6 +1,7 @@
 #include "/workspaces/SudokuCreater/include/sudoku.h"
 #include <algorithm>
-
+#include <ctime>
+#include <cstdlib>
 //9x9 board with 0s as blanks. initialized. 
 SudokuBoard::SudokuBoard() : board(9, std::vector<int>(9, 0)) {}
 
@@ -55,4 +56,22 @@ bool SudokuBoard::solve() {
 }
 
 //generator
-void SudokuBoard::generate() {}
+void SudokuBoard::generate() {
+    solve();
+}
+
+
+//makePuzzle
+void SudokuBoard::makePuzzle(int clue) {
+    //remove a bit of cells 
+    int cellsToRemove = 81 - clue;
+    std::srand(std::time(nullptr));
+    while (cellsToRemove > 0) {
+        int row = std::rand() % 9;
+        int col = std::rand() % 9;
+        if (board[row][col] != 0) {
+            board[row][col] = 0;
+            --cellsToRemove;
+        }
+    }
+}

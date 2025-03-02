@@ -10,6 +10,8 @@ public:
     void print() const;   
     bool isValid(int row, int col, int num) const;
     bool solve();
+    void generate();
+    void makePuzzle(int clue);
     //should add checker, solver, generator, etc later on.
 
 private:
