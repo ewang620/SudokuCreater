@@ -29,3 +29,26 @@ bool SudokuBoard::isValid(int row, int col, int num) const {
     }
     return true;
 }
+
+//backtracking
+bool SudokuBoard::solve() {
+    for (int row = 0; row < 9; ++row) {
+        for (int col = 0; col < 9; ++col) {
+            if (board[row][col] == 0) {  
+
+            // if empty cell exist
+                for (int num = 1; num <= 9; ++num) {
+                    if (isValid(row, col, num)) {
+                        board[row][col] = num;
+                        if (solve())
+                            return true;
+                        board[row][col] = 0; // backtrack, set to 0
+                    
+                    }
+                }
+                return false;
+            }
+        }
+    }
+    return true;
+}
