@@ -10,7 +10,7 @@ public:
     void print() const;   
     //should add checker, solver, generator, etc later on.
 
-    private:
+private:
     std::vector<std::vector<int>> board;  
     //board size should be 9x9
 };
