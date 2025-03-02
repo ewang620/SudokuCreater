@@ -1,2 +1,2 @@
 # SudokuCreater
-2nd attempt on git
+Sudoku Creater - Testing out C++ material.
